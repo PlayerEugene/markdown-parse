@@ -13,7 +13,12 @@ public class MarkdownParse {
         while(currentIndex < markdown.length()) {
             int nextOpenBracket = markdown.indexOf("[", currentIndex);
             int nextCloseBracket = markdown.indexOf("](", nextOpenBracket);
+            int startHttp = markdown.indexOf("https://", nextCloseBracket + 1);
+            int endHtml = markdown.indexOf(".html", nextCloseBracket + 1);
             int closeParen = markdown.indexOf(")", nextCloseBracket + 1);
+            if(startHttp == -1 && endHtml == -1) {
+                break;
+            }
             if(nextOpenBracket == -1 || nextCloseBracket == -1 || closeParen == -1) {
                 break;
             }
