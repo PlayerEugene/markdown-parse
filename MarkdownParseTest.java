@@ -32,6 +32,11 @@ public class MarkdownParseTest {
     }
 
     @Test
+    public void fail2() {
+        assertEquals(1, 2);
+    }
+
+    @Test
     public void testFile1() throws Exception {
         fileName = Path.of("test-file.md");
 	    contents = Files.readString(fileName);
