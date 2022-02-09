@@ -1,3 +1,4 @@
+test: MarkdownParseTest.class
 MarkdownParseTest.class: MarkdownParseTest.java MarkdownParseTest.class
 	javac MarkdownParseTest.java
 
