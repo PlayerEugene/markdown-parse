@@ -59,8 +59,8 @@ public class MarkdownParse {
                 return toReturn;
             }
             String potentialLink = markdown.substring(openParen + 1, closeParen);
-            System.out.println(currentIndex);
-            System.out.println(potentialLink);
+            // System.out.println(currentIndex);
+            // System.out.println(potentialLink);
             if(potentialLink.indexOf(" ") == -1 && potentialLink.indexOf("\n") == -1) {
                 toReturn.add(potentialLink);
                 currentIndex = closeParen + 1;
@@ -69,7 +69,7 @@ public class MarkdownParse {
                 currentIndex = currentIndex + 1;
             }
         }
-        System.out.println(currentIndex + " hi");
+        // System.out.println(currentIndex + " hi");
         return toReturn;
     }
     public static void main(String[] args) throws IOException {
