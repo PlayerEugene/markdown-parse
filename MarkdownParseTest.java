@@ -63,4 +63,25 @@ public class MarkdownParseTest {
 	    contents = Files.readString(fileName);
         assertEquals(fileMap.get("test4.md"), MarkdownParse.getLinks(contents));
     }
+
+    @Test
+    public void testSnippet1() throws Exception {
+        fileName = Path.of("snippet1.md");
+        contents = Files.readString(fileName);
+        assertEquals("[`google.com, google.com, ucsd.edu]", MarkdownParse.getLinks(contents));
+    }
+
+    @Test
+    public void testSnippet2() throws Exception {
+        fileName = Path.of("snippet2.md");
+        contents = Files.readString(fileName);
+        assertEquals("[a.com, a.com(()), example.com]", MarkdownParse.getLinks(contents));
+    }
+
+    @Test
+    public void testSnippet3() throws Exception {
+        fileName = Path.of("snippet3.md");
+        contents = Files.readString(fileName);
+        assertEquals("[https://ucsd-cse15l-w22.github.io/]", MarkdownParse.getLinks(contents));
+    }
 }
